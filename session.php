@@ -3,6 +3,6 @@ session_start();
  
 if(!isset($_SESSION['username']))
 {
-header("Location: ../../app/staffLogin.php");
+header("Location: user.php");
 exit(); 
 }

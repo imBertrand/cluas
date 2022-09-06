@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 include 'dbconn.php';
 
 
@@ -96,6 +96,47 @@ window.location = 'admin.php'
         }
 }
 
+//Remove user
+	if (isset($_POST['delete'])) {
+    $sql = "DELETE from staff where staffId = ?";
+    $result=$conn->prepare($sql); 
+    $result->execute([$_POST['staffId']]); 
+
+        if ($result== true) {
+            echo "
+				<script>
+				alert('User Added')
+				</script>
+				<script>
+				window.location = 'adminPage.php'
+				</script>
+				";
+        }
+}
+
+if (isset($_POST['edit'])) {
+
+	header("Location: editStaff.php?staffId=".$_POST['staffId']);
+}
+
+if (isset($_POST['addLog'])) {
+
+    $sql = "INSERT INTO useLog values(?,?,current_time,?,?) ";
+    $result=$conn->prepare($sql); 
+    $result->execute([$_POST['clientId'],$_POST['clientName'],$_POST['purpose'],$_POST['duration']]); 
+
+        if ($result== true) {
+            echo "
+				<script>
+				alert('Log Added')
+				</script>
+				<script>
+				window.location = 'index.php'
+				</script>
+				";
+        }
+}
+
 //Add Programm
 if (isset($_POST['addProgram'])) {
     $sql = "INSERT INTO programs values(?,?) ";
@@ -110,9 +151,26 @@ if (isset($_POST['addProgram'])) {
         }
     }
  
-//Search Record
+//Edit User
+if (isset($_POST['updateDetails'])) {
 
-//Update Details
+    global $conn;
+    $sql = "UPDATE staff SET firstName = ?, LastName = ? , username = ?, password=? where staffId = ? ";
+    $result=$conn->prepare($sql); 
+    $result->execute([$_POST['firstName'],$_POST['lastName'],$_POST['username'],$_POST['password'],$_POST['staffId']]); 
+
+        if ($result== true) {
+            echo "
+<script>
+alert('Staff Detail Updated')
+</script>
+<script>
+window.location = 'adminPage.php'
+</script>
+";
+        }
+        
+}
 
 //------------------------------------------------------------
 ?>

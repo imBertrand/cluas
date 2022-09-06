@@ -1,3 +1,12 @@
+<?php
+include 'session.php';
+include 'dbconn.php';
+
+$sql = "SELECT * from staff";
+$result=$conn->prepare($sql);
+$result->execute();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +20,8 @@
 
 <body>
     <h3>Computer Lab Usage Accountability System</h3>
-    <a href="logout.php"><img src="/logout.png"> </a>
-    <button>New User</button>
+    <a href="logout.php"><img src="/logout.png"></a>
+    <a href="newStaff.php"><button>New User</button></a>
     <table class="staffTable">
         <thead>
             <tr>
@@ -26,44 +35,35 @@
             </tr>
         </thead>
         <tbody>
+            <?php while ($list=$result->fetch(PDO::FETCH_ASSOC)) { ?>
             <tr>
-                <td>cluas 56</td>
-                <td>Sheila</td>
-                <td>Aber</td>
-                <td>sheilahAber</td>
-                <td>@sheiillaa22</td>
-                <td id="edit1"></td>
-                <td id="delete1"></td>
+                <form action="func.php" method="post">
+                    <td>
+                        <input type="hidden" name="staffId" value="<?php echo $list['staffId']; ?>">
+                        <?php echo $list['staffId']; ?>
+                    </td>
+                    <td>
+                        <?php echo $list['firstName']; ?>
+                    </td>
+                    <td>
+                        <?php echo $list['LastName']; ?>
+                    </td>
+                    <td>
+                        <?php echo $list['username']; ?>
+                    </td>
+                    <td>
+                        <?php echo $list['password']; ?>
+                    </td>
+                    <td id="edit1">
+                        <input type="submit" name="edit" name="edit" value="Edit">
+                    </td>
+                    <td id="delete1">
+                        <input type="submit" name="delete" value="Delete">
+                    </td>
+                </form>
+                </a>
             </tr>
-            <tr>
-                <td>cluas 66</td>
-                <td>Patience</td>
-                <td>kemigabo</td>
-                <td>patyKemigabo</td>
-                <td>@patykk22</td>
-                <td id="edit1"></td>
-                <td id="delete1"></td>
-            </tr>
-            <tr>
-                <td>cluas 46</td>
-                <td>John</td>
-                <td>Bill</td>
-                <td>johnBill</td>
-                <td>@bill22</td>
-                <td id="edit1"></td>
-                <td id="delete1"></td>
-            </tr>
-            <tr>
-                <td>cluas 36</td>
-                <td>Noellah</td>
-                <td>Babirye</td>
-                <td>noellahB</td>
-                <td>@nellahB22</td>
-                <td id="edit1"></td>
-                <td id="delete1"></td>
-            </tr>
-            <div>
-            </div>
+            <?php } ?>
         </tbody>
     </table>
 </body>

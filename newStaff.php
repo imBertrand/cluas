@@ -1,3 +1,6 @@
+<?php 
+include 'session.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +16,7 @@
     <h3 class="heading">Computer Lab Usage Accountability System</h3>
     <img src="/logout.png">
     <form class="staffForm" action="func.php" method="post">
-<h3 id="newStaff">Enter New Staff Information</h3>
+        <h3 id="newStaff">Enter New Staff Information</h3>
         <label>Staff Id</label>
         <input type="text" name="staffId" class="text"><br><br>
         <br>
