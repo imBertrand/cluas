@@ -6,11 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
-<<<<<<< HEAD
     <title>Staff Log In</title>
-=======
-    <title>User Log In</title>
->>>>>>> 9e45b0297e576a51c63302433e243c47913f945f
 </head>
 
 <body>
