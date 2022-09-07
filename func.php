@@ -105,7 +105,7 @@ window.location = 'admin.php'
         if ($result== true) {
             echo "
 				<script>
-				alert('User Added')
+				alert('User Removed')
 				</script>
 				<script>
 				window.location = 'adminPage.php'
