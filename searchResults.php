@@ -20,7 +20,7 @@ $result->execute([$_POST['search']]);
 
 <body>
     <h3>Computer Lab Usage Accountability System</h3>
-    <a href="logout.php"><img src="/logout.png"></a>
+    <a href="logout.php"><img src="logout.png"></a>
     <h2>Search Results</h2>
     <table class="staffTable">
         <thead>

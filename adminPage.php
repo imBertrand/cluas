@@ -20,7 +20,7 @@ $result->execute();
 
 <body>
     <h3>Computer Lab Usage Accountability System</h3>
-    <a href="logout.php"><img src="/logout.png"></a>
+    <a href="logout.php"><img src="logout.png"></a>
     <a href="newStaff.php"><button>New User</button></a>
     <table class="staffTable">
         <thead>
@@ -54,10 +54,10 @@ $result->execute();
                     <td>
                         <?php echo $list['password']; ?>
                     </td>
-                    <td id="edit1">
+                    <td style="text-align: center; vertical-align: middle;">
                         <input type="submit" name="edit" name="edit" value="Edit">
                     </td>
-                    <td id="delete1">
+                    <td style="text-align: center; vertical-align: middle;">
                         <input type="submit" name="delete" value="Delete">
                     </td>
                 </form>

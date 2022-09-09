@@ -50,7 +50,7 @@ while ($list=$result->fetch(PDO::FETCH_ASSOC)) {  ?>
 
 <body>
     <h3 class="heading">Computer Lab Usage Accountability System</h3>
-    <img src="/logout.png">
+    <img src="logout.png">
     <form class="staffForm" action="func.php" method="post">
         <?php  result();?>
     </form>

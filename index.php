@@ -14,7 +14,7 @@ include 'session.php';
 
 <body>
     <h3 class="heading">Computer Lab Usage Accountability System</h3>
-    <a href="logout.php"><img src="/logout.png"></a>
+    <a href="logout.php"><img src="logout.png"></a>
     <h2 class="input">Search Client Data By Purpose</h2>
     <form action="searchResults.php" method="post">
         <input class="inputBox" name="search" placeholder="Enter purpose of use">
